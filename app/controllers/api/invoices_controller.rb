@@ -3,7 +3,11 @@ class Api::InvoicesController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-  	@invoices = current_user.invoices
+    if current_user.present?
+    	@invoices = current_user.invoices
+    else
+      render :text => "login", status: 422
+    end
   end
 
   def create

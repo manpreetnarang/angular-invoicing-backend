@@ -15,7 +15,9 @@ function InvoiceController($scope, $http) {
         $scope.invoices = data;
     }).
       error(function(data, status, headers, config) {
-        alert("error occured!");
+        if(data == "login"){
+          window.location = "/users/sign_in"
+        }
     });
   }
 
@@ -25,7 +27,9 @@ function InvoiceController($scope, $http) {
         $scope.customers = data;
     }).
       error(function(data, status, headers, config) {
-        alert("error occured!");
+        if(data == "login"){
+          window.location = "/users/sign_in"
+        }
     });
   }
 
