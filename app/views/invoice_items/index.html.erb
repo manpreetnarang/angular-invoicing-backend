@@ -1,0 +1,35 @@
+<h1>Listing invoice_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Cost</th>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoice_items.each do |invoice_item| %>
+      <tr>
+        <td><%= invoice_item.invoice_id %></td>
+        <td><%= invoice_item.description %></td>
+        <td><%= invoice_item.qty %></td>
+        <td><%= invoice_item.cost %></td>
+        <td><%= invoice_item.total %></td>
+        <td><%= link_to 'Show', invoice_item %></td>
+        <td><%= link_to 'Edit', edit_invoice_item_path(invoice_item) %></td>
+        <td><%= link_to 'Destroy', invoice_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoice item', new_invoice_item_path %>

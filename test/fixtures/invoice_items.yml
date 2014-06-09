@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: 1
+  description: MyString
+  qty: 1.5
+  cost: 1.5
+  total: 1.5
+
+two:
+  invoice_id: 1
+  description: MyString
+  qty: 1.5
+  cost: 1.5
+  total: 1.5
